@@ -1,0 +1,230 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Wallpoet|ZCOOL+QingKe+HuangYou&display=swap');
+/*font-family: 'Bowlby One SC', cursive;
+font-family: 'ZCOOL QingKe HuangYou', cursive;
+font-family: 'Wallpoet', cursive;*/
+
+body {
+  margin: 0;
+  font-family: 'Raleway';
+ /* color: #E7E0D6;*/
+ color: black;
+ background-color: #EBEBEB;
+}
+
+.differ{
+  background-color: #252525;
+}
+
+/* -----------------fonts --------------*/
+
+h1{
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #252525;
+   font-family: 'Wallpoet', cursive;
+   font-weight: normal;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   padding-left: 5px;
+   margin-top: 40px;
+}
+
+h2{
+   color: black;
+   font-size: 45px;
+   font-family: 'Wallpoet', cursive;
+   text-align: center;
+   color: white;
+
+}
+
+h3{
+  font-size: 20px;
+  color: #252525;
+  font-weight: normal;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+   font-family: 'Wallpoet', cursive;
+   font-weight: normal;
+   padding-top: 20px;
+}
+
+p{
+   max-width: 800px;
+   text-align: left;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.pf{
+  margin-top: 25px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 300px;
+}
+
+.pf:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.links{
+   max-width: 400px;
+   float: left;
+
+}
+
+.rechts{
+   max-width: 400px;
+   float: right;
+}
+
+header{
+   background-color: #252525;
+   padding-top: 40px;
+   padding-bottom: 10px;
+ /*  padding-bottom: 50px;*/
+/*   margin-bottom: 50px;*/
+}
+
+
+img, video{
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*menu */
+
+.topnav {
+  overflow: hidden;
+/*    background-color: #00BAF0;
+  background: linear-gradient(to bottom, #131311, #1C1C1A);*/
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: #252525;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #EBEBEB;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.topnav a:hover {
+  color: white;
+}
+
+/*.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}*/
+
+.topnav .icon {
+  display: none;
+}
+
+/*-------------------- Processing ---------------*/
+.processingcode{
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: yellow;
+}
+
+/* ------------------Adruino ---------------*/
+
+.arduinocode{
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: pink;
+}
+
+/* ------------------ Labweeks -------------*/
+/*.blok{
+  max-width: 1000px;
+  background: #A5AEA7;
+  border-radius: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  padding-top: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}*/
+
+img{
+  width: 300px;
+}
+
+.group{
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  position: relative;
+}
+
+/*------------------- Topics -------------------*/
+
+.section{
+  background-color: blue;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  height: 50px;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 30px;
+
+}
+
+.textdecoration{
+  text-decoration: none;
+  text-align: center;
+  font-size: 30px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
+
+
+

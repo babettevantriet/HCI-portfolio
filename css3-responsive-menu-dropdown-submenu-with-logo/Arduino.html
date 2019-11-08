@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio Homepage</title>
+      <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/arduino.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+   <div class="topnav" id="myTopnav">
+    <a href="index.html" class="active">Home</a>
+    <a href="Topics.html">Topics</a>
+    <a href="Workshops.html">Workshops</a>
+    <a href="Excursion.html">Excursion</a>
+     <a href="Labweeks.html">Labweeks</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <header>
+    <h2>Workshops | Arduino</h2>
+  </header>
+  <p>
+    Bij deze workshop heb ik kennis gemaakt met arduino. Met arduino moest ik een code schrijven die ik daarna kon testen op mn breadboard. De onderstaande opdracht zijn allemaal toegeligt met daarbij de code en video van de uitkomst.
+  </p>
+
+    <div class="achtergrond">
+      <div class="blok">
+       <h1>Opdracht 3C</h1>
+       <p>Bij deze opdracht brand het ene lampje twee keer snellen dan het andere lampje.</p>
+       <div class="arduinocode">
+         <p>void setup() {
+            pinMode(13, OUTPUT);<br />
+            pinMode(12, OUTPUT);<br />
+            }<br />
+            <br />
+            void loop() {<br />
+            digitalWrite(13, HIGH);<br />
+            delay(0);<br />
+            digitalWrite(12, LOW);<br />
+            delay(500);<br />
+            digitalWrite(13, LOW);<br />
+            delay(500);<br />
+            digitalWrite(12, HIGH);<br />
+            delay(0);<br />
+            digitalWrite(13, HIGH);<br />
+            delay(500); <br />
+            digitalWrite(13, LOW);<br />
+            delay(500);<br />
+            }
+          </p>
+        </div>
+
+          <video width="400" controls>
+            <source src="images/opdracht3.mp4" type="video/mp4">
+            Je browser ondersteunt niet deze HTML5 Video.
+          </video>
+      </div>
+
+      <div class="blok">
+        <h1>Opdracht 4C</h1>
+        <p>Bij deze opdracht gaan de lampjes om de beurt langzaam aan en uit.</p>
+               <div class="arduinocode">
+                 <p>
+                  int greenLedPin = 10;<br />
+                  int yellowLedPin = 9;<br />
+                  int brightness = 0;<br />
+                  int fadeAmount = 5;<br />
+                  <br />
+                  void setup() {<br />
+                  pinMode(greenLedPin, OUTPUT);<br />
+                  pinMode(yellowLedPin, OUTPUT);<br />
+                  }<br />
+
+                  void loop() {<br />
+                  for (int brightness=0; brightness < 256; <br />brightness++){ <br />
+                  analogWrite(yellowLedPin, brightness);<br />
+                  analogWrite(greenLedPin, 255-brightness);<br />
+                  delay(10);<br />
+                  }<br />
+                  <br />
+                  for (int brightness=255; brightness >0;<br /> brightness--){<br />
+                  analogWrite(yellowLedPin, brightness);<br />
+                  analogWrite(greenLedPin, 255-brightness);<br />
+                  delay(10);<br />
+                  }<br />
+                  }<br />
+                 </p>
+               </div>
+          <video width="400" controls>
+            <source src="images/opdracht4.mp4" type="video/mp4">
+            Je browser ondersteunt niet deze HTML5 Video.
+          </video>
+      </div>
+
+      <div class="blok">
+        <h1>Opdracht 6C</h1>
+        <p>Bij deze opdracht wordt er gebruik gemaakt van een potentiometer. Als je eraan draait moet het ene lampje langzaam aangaan en het andere lampje langzaam uit.</p>
+               <div class="arduinocode">
+                 <p>
+                    float sensorValue = 0; // variable for sensor value<br />
+                    int sensorPin = A0; // variable for sensor pin<br />
+                    int greenLedPin = 10;<br />
+                    int yellowLedPin = 9;<br />
+                    <br />
+                    void setup() {<br />
+                     pinMode(sensorPin, INPUT);<br />
+                     Serial.begin(9600);<br />
+                     pinMode(greenLedPin, OUTPUT);<br />
+                     pinMode(yellowLedPin, OUTPUT);<br />
+                    }<br />
+                    void loop() {<br />
+                     sensorValue = analogRead(sensorPin); // read the value/voltage on the sensor pin and<br />
+                     sensorValue = map(sensorValue,0,1023,0,255); // store that value in the variable sensorValue<br />
+                     analogWrite(greenLedPin, sensorValue);<br />
+                     analogWrite(yellowLedPin, 255-sensorValue);<br />
+                    }
+                 </p>
+               </div>
+          <video width="400" controls>
+           <source src="images/opdracht6.mp4" type="video/mp4">
+            Je browser ondersteunt niet deze HTML5 Video.
+          </video>
+      </div>
+
+      <div class="blok">
+        <h1>Opdracht 7</h1>
+        <p>Bij deze opdracht werd er gebruik gemaakt van een licht sensor. Wanneer er geen ligt bij het sensor komt gaan beide lampjes uit, wanneer er weer ligt bij komt gaan de lampjes weer aan. </p>
+               <div class="arduinocode">
+                 <p>
+                    int sensorValue = 0; // variable for sensor value<br />
+                    int sensorPin = A0; // variable for sensor pin<br />
+                    int greenLedPin = 10;<br />
+                    int yellowLedPin = 9;<br />
+                    <br />
+                    void setup() {<br />
+                     pinMode(sensorPin, INPUT);<br />
+                     Serial.begin(9600);<br />
+                     pinMode(greenLedPin, OUTPUT);<br />
+                    pinMode(yellowLedPin, OUTPUT);<br />
+                    }<br />
+                    void loop() {<br />
+                     sensorValue = analogRead(sensorPin); // read the value/voltage on the sensor pin and<br />
+                     sensorValue = map(sensorValue, 700, 900, 0, 255);<br />
+                     sensorValue = constrain(sensorValue, 0, 255);<br />
+                     //sensorValue = (sensorValue/1023)*255;<br />
+                     Serial.println(sensorValue);<br />
+                     <br />
+                     analogWrite(greenLedPin, sensorValue);<br />
+                     analogWrite(yellowLedPin, sensorValue);<br />
+                    <br />
+                     <br />
+                     delay(200); // delay for 0.2 seconds<br />
+                    }
+                 </p>
+               </div>
+
+          <video width="400" controls>
+              <source src="images/opdracht7.mp4" type="video/mp4">
+              Je browser ondersteunt niet deze HTML5 Video.
+          </video>
+      </div>
+
+      <div class="blok">
+        <h1>Opdracht 8</h1>
+        <p>Bij deze opdracht is er gebruik gemaakt van de volgende formule: Vout= Vin *(R1+R2))</p>
+               <div class="arduinocode">
+                 <p>
+                    int sensorValue = 0; // variable for sensor value<br />
+                    int sensorPin = A0; // variable for sensor pin<br />
+                    <br />
+                    void setup() {<br />
+                    pinMode(sensorPin, INPUT);<br />
+                    Serial.begin(9600);<br />
+                    }<br />
+                    <br />
+                    void loop() {<br />
+                    sensorValue = analogRead(sensorPin); // read the value/voltage on the sensor pin and store that value in the variable sensorValue<br />
+                    Serial.println(sensorValue); // print out sensorValue to the Serial Monitor<br />
+                    delay(200); // delay for 0.2 seconds<br />
+                    }<br />
+                    <br />
+                    //Open: Hulpmiddelen > Seriële monitor
+                     
+                 </p>
+               </div>
+          <video width="400" controls>
+            <source src="images/opdracht8.mp4" type="video/mp4">
+              Je browser ondersteunt niet deze HTML5 Video.
+          </video>
+      </div>
+
+      <div class="blok">
+        <h1>Opdracht 9B</h1>
+        <p>Bij deze opdracht wordt er gebruik gemaakt van het programma ‘processing’. Je moest zelf iets verzinnen en ervoor zorgen dat wanneer je aan de potentie meter draait er iets interessants gebeurt. Bij mij was deze opdracht allen niet gelukt. </p>
+               <div class="arduinocode">
+                 <p>
+                    float sensorValue = 0;<br />
+                    int sensorPin = A0; <br />
+                    int greenLedPin = 10;<br />
+                    <br />
+                    void setup() { <br />
+                    Serial.begin(9600);<br />
+                    pinMode(sensorPin, INPUT); <br />
+                    pinMode(greenLedPin, OUTPUT);<br />
+                    }<br />
+                    <br />
+                    void loop() {<br />
+                    sensorValue = analogRead(sensorPin); // Read the value/current on the sensor pin and<br />
+                                                        // store that value in the variable <br />
+                    sensorValue = (sensorValue/1023)*255; // Rescale the sensor's value. Change<br />
+                                                        // to calibrate the sensor. <br />
+                    analogWrite(greenLedPin, sensorValue);// Send power to LED<br />
+                    Serial.println(sensorValue); // Print the sensorValue to the serial <br />
+                                                  // connection<br />
+                    delay(100); // Wait 0.1 seconds <br />
+                    }
+                 </p>
+               </div>
+                 <div class="processingcode">
+                  import processing.serial.*;<br />
+                  <br />
+                  Serial myPort;<br />
+                  String sensorReading="";<br />
+                  <br />
+                  void setup() {<br />
+                  size(800, 800);<br />
+                  myPort = new Serial(this, Serial.list()[1], 9600); // instead of 5, choose what even serial port the Arduino connects to<br />
+                  myPort.bufferUntil('\n');<br />
+                  }<br />
+                  <br />
+                  void draw() {<br />
+                  background(255);<br />
+                  fill(0);<br />
+                  text("Sensor Reading: " + sensorReading, 322, 260);<br />
+                  //quad(0, 0, 0, 400, 0, float(sensorReading), float(sensorReading), float(sensorReading));<br />
+                  //ellipse(width/5, height/5, float(sensorReading), float(sensorReading));<br />
+                  arc(400, 400, 200, 200, 0, (float(sensorReading)/40.5), PIE);<br />
+                  }<br />
+                  <br />
+                  void serialEvent (Serial myPort) {<br />
+                  sensorReading = myPort.readStringUntil('\n');<br />
+                  }<br />
+               </div>
+        <img src="images/opdracht9b.png">
+          <video width="400" controls>
+              <source src="images/opdracht9.mp4" type="video/mp4">
+              Je browser ondersteunt niet deze HTML5 Video.
+          </video>
+      </div>
+
+      <div class="blok">
+        <h1>Opdracht 10F</h1>
+        <p>Bij deze opdracht werdt er gebruik gemaakt van 2 buttons. Het lampje moet gaan branden als er 1 knopje ingedrukt wordt, wanneer er 2 ingedrukt worden werkt het lampje niet meer. </p>
+               <div class="arduinocode">
+                 <p>
+                   // constants won't change. They're used here to set pin numbers:<br />
+const int buttonPin1 = 2; // the number of the pushbutton pin<br />
+const int buttonPin2 = 3; // the number of the pushbutton pin<br />
+const int ledPin = 13; // the number of the LED pin<br />
+<br />
+void setup() {<br />
+// initialize the LED pin as an output:<br />
+pinMode(ledPin, OUTPUT);<br />
+// initialize the pushbutton pin as an input:<br />
+pinMode(buttonPin1, INPUT);<br />
+// initialize the pushbutton pin as an input:<br />
+pinMode(buttonPin2, INPUT);<br />
+}<br />
+<br />
+void loop() {<br />
+// check if the pushbutton is pressed. If it is, the buttonState is HIGH:<br />
+if ((digitalRead(buttonPin1) == HIGH) && (digitalRead(buttonPin2) == HIGH)) {<br />
+// turn LED on:<br />
+digitalWrite(ledPin, LOW);<br />
+} else if ((digitalRead(buttonPin1) == HIGH) || (digitalRead(buttonPin2) == HIGH)) {<br />
+// turn LED on:<br />
+digitalWrite(ledPin, HIGH);<br />
+} else {<br />
+// turn LED off:<br />
+digitalWrite(ledPin, LOW);<br />
+}<br />
+}
+                 </p>
+               </div>
+             
+          <video width="400" controls>
+              <source src="images/opdracht10f.mp4" type="video/mp4">
+              Je browser ondersteunt niet deze HTML5 Video.
+          </video>
+      </div>
+
+      <div class="blok">
+        <h1>Opdracht 11B</h1>
+        <p>Bij deze opdracht is er gebruik gemaakt van een servomotor, die moest ik op een interessante manier laten bewegen. </p>
+               <div class="arduinocode">
+                 <p>
+                    #include < Servo.h><br />
+                    Servo myServo; // Declare a servo object for us to control<br />
+                    int servoPin = 9; // Var for the pin the servo connects to<br />
+                    int pos = 0; // Var to keep track of the servo's position<br />
+                    <br />
+                    void setup() {<br />
+                    myServo.attach(servoPin); // Tell the servo to what pin it's connected to<br />
+                    }<br />
+                    <br />
+                    void loop() {<br />
+                    for(pos = 0; pos < 180; pos += 1){ // Loop, pos is added to (from 0 to 160)<br />
+                    myServo.write(pos); // Turn the servo to the position in pos<br />
+                    delay(15); // Wait 15ms<br />
+                    myServo.write(0); // Turn the servo to the position in pos<br />
+                    delay(500); // Wait 15ms<br />
+                    myServo.write(30); // Turn the servo to the position in pos<br />
+                    delay(1000); // Wait 15ms<br />
+                    myServo.write(0); // Turn the servo to the position in pos<br />
+                    delay(200); // Wait 15ms<br />
+                    myServo.write(120); // Turn the servo to the position in pos<br />
+                    delay(1000); // Wait 15ms<br />
+                    myServo.write(80); // Turn the servo to the position in pos<br />
+                    delay(200); // Wait 15ms<br />
+                    }<br />
+                    }<br />
+                 </p>
+               </div>
+         <video width="400" controls>
+              <source src="images/opdracht11B.mp4" type="video/mp4">
+              Je browser ondersteunt niet deze HTML5 Video.
+          </video>
+      </div>
+
+      <div class="blok">
+        <h1>Opdracht 12B</h1>
+        <p>Bij deze opdracht werd er gebruik gemaakt van de servomotor. Door op de knoppen te drukken kan je hem van links naar rechts laten bewegen. </p>
+               <div class="arduinocode">
+                 <p>
+                    #include < Servo.h><br />
+                    Servo myServo;<br />
+                    int servoPin = 9;<br />
+                    int pos = 0;<br />
+                    int buttonPinL = 3;<br />
+                    int buttonPinR = 2;<br />
+                    <br />
+                    void setup() {<br />
+                    myServo.attach(servoPin);<br />
+                    pinMode(buttonPinL, INPUT);<br />
+                    pinMode(buttonPinR, INPUT);<br />
+                    }<br />
+                    <br />
+                    void loop() {<br />
+                    if (digitalRead(buttonPinL) == HIGH && digitalRead(buttonPinR) == LOW){<br />
+                    pos++;<br />
+                    if (pos > 160) {<br />
+                    pos = 160;<br />
+                    }<br />
+                    delay(5); <br />
+                    }<br />
+                    if (digitalRead(buttonPinR) == HIGH && digitalRead(buttonPinL) == LOW){<br />
+                    pos--;<br />
+                    if (pos < 0) {<br />
+                    pos = 0;<br />
+                    }<br />
+                    delay(5);<br />
+                    }<br />
+                    if (pos >= 0 && pos <= 160) {<br />
+                    myServo.write(pos);<br />
+                    }<br />
+                    }<br />
+                 </p>
+               </div>
+          <video width="400" controls>
+              <source src="images/opdracht12B.mp4" type="video/mp4">
+              Je browser ondersteunt niet deze HTML5 Video.
+          </video>
+      </div>
+
+      <div class="blok">
+        <h1>Opdracht 13B</h1>
+        <p>Bij deze opdracht wordt er muziek gemaakt met behulp van een speaker. </p>
+               <div class="arduinocode">
+                 <p>
+                    int speakerPin = 8;
+                    void setup(){<br />
+                      pinMode(speakerPin, OUTPUT);<br />
+                    }<br />
+                    void loop(){<br />
+                      tone(speakerPin,311,300); // plays g4 for 200ms<br />
+                      delay(250); //wait 250 ms<br />
+                       tone(speakerPin, 330, 300); // plays c4 for 200ms<br />
+                      delay(300);//wait 250 ms<br />
+                       tone(speakerPin, 349,400); // plays f4 for 200ms<br />
+                      delay(500);//wait 300 ms<br />
+                       tone(speakerPin, 349, 450); // plays f4 for 200ms<br />
+                      delay(600);//wait 300 ms<br />
+                    <br />
+                       tone(speakerPin, 349, 200); // plays G4 for 200ms<br />
+                      delay(250);//wait 250 ms<br />
+                       tone(speakerPin, 311, 200); // plays G4 for 200ms<br />
+                      delay(250);//wait 250 ms<br />
+                       tone(speakerPin, 349, 200); // plays G4 for 200ms<br />
+                      delay(250);//wait 250 ms<br />
+                       tone(speakerPin, 311, 200); // plays G4 for 200ms<br />
+                      delay(250);//wait 250 ms<br />
+                      <br />
+                       tone(speakerPin, 311,300); // plays G4 for 200ms<br />
+                      delay(250);//wait 250 ms<br />
+                       tone(speakerPin, 330, 300); // plays c4 for 200ms<br />
+                      delay(300);//wait 250 ms<br />
+                       tone(speakerPin, 349, 400); // plays f4 for 200ms<br />
+                      delay(500);//wait 300 ms<br />
+                       tone(speakerPin, 349, 450); // plays f4 for 200ms<br />
+                      delay(600);//wait 300 ms<br />
+                    <br />
+                       tone(speakerPin, 349, 200); // plays G4 for 200ms<br />
+                      delay(250);//wait 250 ms<br />
+                       tone(speakerPin, 311, 200); // plays G4 for 200ms<br />
+                      delay(250);//wait 250 ms<br />
+                       tone(speakerPin, 349, 200); // plays G4 for 200ms<br />
+                      delay(250);//wait 250 ms<br />
+                       tone(speakerPin, 311, 200); // plays G4 for 200ms<br />
+                      delay(250);//wait 250 ms<br />
+                    }
+                 </p>
+               </div>
+         <video width="400" controls>
+              <source src="images/opdracht13B.mp4" type="video/mp4">
+              Je browser ondersteunt niet deze HTML5 Video.
+          </video>
+      </div>
+
+
+
+
+
+    </div>
+
+   <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+</body>
+
+</html>
