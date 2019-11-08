@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio Homepage</title>
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/topics.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="differ">
+<div class="topnav" id="myTopnav">
+  <a href="index.html" class="active">Home</a>
+  <a href="Topics.html">Topics</a>
+  <a href="Workshops.html">Workshops</a>
+  <a href="Excursion.html">Excursion</a>
+   <a href="Labweeks.html">Labweeks</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<header>
+<h2>Topics</h2>
+</header>
+    <a href="Wearables.html" class="textdecoration"><div class="section">Wearables</div></a>
+    <a href="PlayfullInteractions.html" class="textdecoration"><div class="section">Playfull Interactions</div></a>
+    <a href="ArtificialCreatures.html" class="textdecoration"><div class="section">Articifial Creatures</div></a>
+    <a href="ARVR.html" class="textdecoration"><div class="section">AR & VR</div></a>
+
+ <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+</body>
+
+</html>

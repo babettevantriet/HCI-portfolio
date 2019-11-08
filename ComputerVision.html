@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio Homepage</title>
+      <link rel="stylesheet" href="css/style.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+   <div class="topnav" id="myTopnav">
+  <a href="index.html" class="active">Home</a>
+  <a href="Topics.html">Topics</a>
+  <a href="Workshops.html">Workshops</a>
+  <a href="Excursion.html">Excursion</a>
+   <a href="Labweeks.html">Labweeks</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<header>
+<h2>Computer vision</h2>
+</header>
+<p>Met computer vision heb ik kennis gemaakt met het programma processing. Processing is een progamma waarmee je verschillende interessante dingen kan doen voor augmented reality. Ik heb eerst drie opdrachten gedaan waarbij ik figurende leerde maken. Daarna twee opdrachten die me leerde werken met gezichtsherkenning. Tot slot heb ik nog een opdracht gemaakt waar ik heb geleerd om een marker te koppelen aan processing.</p>
+
+      <h1>Assignment 1</h1>
+      <p>
+        Het is de bedoeling om een programma te schrijven waarin er drie verschillende figuren staan die:<br />
+        - Op een verschillende locatie staan <br />
+        - Allemaal een andere kleur hebben <br />
+        - Verschillende lengte en breedte hebben <br />
+        - En verschil in wel of geen border.<br />
+<br />
+        De stoke() of noStroke() geeft aan of er wel of geen border omheen zit. <br />
+        fil(), houd in met welke kleur het ovaal ingekleurd wordt. <br />
+        ellipsemode(CORNER) betekend dat hij de afstand berekend vanaf de denkbeeldige vierkant die om het ovaal staat.<br />
+        ellipsemode(CENTER) betekend dat hij de afstand berekend vanaf het midden van het ovaal.<br />
+         Tot slot heb je de elipse(‘getal1’, ‘getal2’, ‘getal3’, ‘getal4’)<br />
+        - Getal1 gaat over de x-as<br />
+        - Getal2 gaat over de y-as<br />
+        - Getal3 gaat over de breedte<br />
+        - Getal4 gaat over de lengte <br />
+      </p>
+      <div class="processingcode">
+        <p>
+          void setup(){ <br />
+        size(300,300);<br />
+       <br />
+       stroke(0, 0, 0);<br />
+       fill(255, 153, 153);<br />
+       rect(0, 0, 25, 25);<br />
+       <br />
+       stroke(0, 0, 0);<br />
+       fill(153, 255, 153);<br />
+       quad(60, 80, 80, 80, 80, 110, 50, 110);<br />
+       <br />
+       //stroke(0, 0, 0);<br />
+       //fill(153, 204, 255);<br />
+       //quad(0,100,x2,y2,x3,y3,x4,y4);<br />
+       <br />
+       stroke(0, 0, 0);<br />
+       fill(153, 153, 244);<br />
+       triangle(40,30, 50, 60, 20, 60);<br />
+          <br />
+      }<br />
+      void draw(){<br />
+      }
+        </p>
+      </div>
+      <img src="images/Assignment1.png">
+
+      <h1>Assignment 2</h1>
+      <p>In deze opdracht is het de bedoeling dat er 4 vormen worden gemaakt die alle 4 op een andere locatie staan, een andere kleur hebben en een andere vorm. Ik heb eerst op papier een voorbeeld gemaakt en daarna uitgewerkt omdat ik het heel erg moeilijk vond om die punten zelf te geven zonder het voor me te kunnen zien. </p>
+      <div class="processingcode">
+        <p>
+          void setup(){<br />
+          size(300,300);<br />
+         <br />
+         stroke(0, 0, 0);<br />
+         fill(255, 153, 153);<br />
+         rect(0, 0, 100, 80);<br />
+         <br />
+         stroke(0, 0, 0);<br />
+         fill(153, 153, 244);<br />
+         triangle(160,40, 160, 140, 40, 140);<br />
+         <br />
+         stroke(0, 0, 0);<br />
+         fill(153, 255, 153);<br />
+         quad(80, 220, 140, 220, 200, 280, 20, 280);<br />
+         <br />
+         stroke(0, 0, 0);<br />
+         fill(153, 204, 255);<br />
+         quad(200,60,240, 60, 200, 180, 160, 180);<br /> 
+          }<br />
+          <br />
+          void draw(){<br />
+          }<br />
+        </p>
+      </div>
+      <img src="images/Assignment2.png">
+
+      <h1>Assignment 3</h1>
+      <p>
+        Voor deze opdracht moest ik een progamma scrhijven die op zijn minst twee verschillende vormen en kleuren bevatte en die ook nog is interactief was. Hierbij had ik al ideeen gekregen. Ik heb gekozen voor een lijn die de muis blijft volgen. In het volgende filmpje is te zien dat ik dit heb gedaan met drie lijnen. 
+      </p>
+      <div class="processingcode">
+        <p>
+          int diameter = 10;<br />
+          <br />
+          void setup() {<br />
+          size(300,300);<br />
+          background (200,200,200);<br />
+          frameRate(15);<br />
+          }<br />
+          <br />
+          void draw() {<br />
+          background (300,300,300);<br />
+          //ellipse(mouseX, mouseY, diameter, diameter);<br />
+          line(0, 50, mouseX, mouseY);<br />
+          line(300, 50, mouseX, mouseY);<br />
+          line(300, 10, mouseX, mouseY);<br />
+          diameter++;<br />
+          }<br />
+        </p>
+      </div>
+        <video width="400" controls>
+            <source src="images/Assignment3.mp4" type="video/mp4">
+            Je browser ondersteunt niet deze HTML5 Video.
+        </video>
+
+
+      <h1>Assignment CV 1</h1>
+      <p>Voor deze opdracht ga je aan de slag met de live webcam. In het begin leer je hoe je bibliotheken moet importeren en hoe je ze daarna kunt aanpassen en gebruiken. Voor deze opdracht moest je gebruik maken van gezichtsherkenning. Hierbij kreeg je een vierkant, en daarbij was het de opdracht om het vierkant rond te maken. Het was niet zo moeilijk om het vierkant rond te krijgen, wel was het nog een kunst om daarna de circle goed op mn gezicht te krijgen.</p>
+      <div class="processingcode">
+        <p>
+          import gab.opencv.*;<br />
+          import processing.video.*;<br />
+          import java.awt.*;<br />
+          <br />
+          Capture video;<br />
+          OpenCV opencv;<br />
+          <br />
+          void setup() {<br />
+          size(640, 480);<br />
+          video = new Capture(this, 640/2, 480/2);<br />
+          opencv = new OpenCV(this, 640/2, 480/2);<br />
+          opencv.loadCascade(OpenCV.CASCADE_FRONTALFACE);<br />
+          <br />
+          video.start();<br />
+          }<br />
+          <br />
+          void draw() {<br />
+          scale(2);<br />
+          opencv.loadImage(video);<br />
+          <br />
+          image(video, 0, 0 );<br />
+          <br />
+          stroke(0, 255, 255);<br />
+          noFill();<br />
+          Rectangle[] faces = opencv.detect();<br />
+          println(faces.length);<br />
+          <br />
+          for (int i = 0; i < faces.length; i++) {<br />
+          println(faces[i].x + "," + faces[i].y);<br />
+          ellipseMode(CORNER);<br />
+          ellipse(faces[i].x, faces[i].y, faces[i].width, faces[i].height);<br />
+          }<br />
+          }<br />
+          <br />
+          void captureEvent(Capture c) {<br />
+          c.read();<br />
+          }
+        </p>
+      </div>
+      <img src="images/CV1.png">
+
+      <h1>Assignment CV 2</h1>
+      <p>Bij deze opdracht werd er weer gebruik gemaakt van gezictsherkennig. Alleen moest ik nu de code dusdanig aanpassen dat er: of een zwartbalkje voor mn ogen kwam, of dat er een rode bal op mijn neus kwam. Ik heb gekozen voor de rode bal, wat te zien is in de onderstaande afbeelding.</p>
+      <div class="processingcode">
+        <p>
+          import gab.opencv.*;<br />
+          import processing.video.*;<br />
+          import java.awt.*;<br />
+          <br />
+          Capture video;<br />
+          OpenCV opencv;<br />
+          <br />
+          void setup() {<br />
+          size(640, 480);<br />
+          video = new Capture(this, 640/2, 480/2);<br />
+          opencv = new OpenCV(this, 640/2, 480/2);<br />
+          opencv.loadCascade(OpenCV.CASCADE_NOSE);<br />
+          //opencv.loadCascade(OpenCV.CASCADE_FRONTALFACE);<br />
+          <br />
+          video.start();<br />
+          }<br />
+          <br />
+          void draw() {<br />
+          scale(2);<br />
+          opencv.loadImage(video);<br />
+          <br />
+          image(video, 0, 0 );<br />
+          <br />
+          fill(255, 0, 0);<br />
+          noStroke();<br />
+          Rectangle[] faces = opencv.detect();<br />
+          println(faces.length);<br />
+          <br />
+          for (int i = 0; i < faces.length; i++) {<br />
+          println(faces[i].x + "," + faces[i].y);<br />
+          ellipseMode(CORNER);<br />
+          ellipse(faces[i].x, faces[i].y, faces[i].width, faces[i].height);<br />
+          }<br />
+          }<br />
+          <br />
+          void captureEvent(Capture c) {<br />
+          c.read();<br />
+          }<br />
+        </p>
+      </div>
+      <img src="images/CV2.png">
+
+      <h1>Assignment CV 3</h1>
+      <p>Bij deze opdrachten heb ik een map moeten downloaden op blackboard. Bij deze map kreeg ik de functie waar de webcam opzoek ging naar het velste punt in beeld, hier moest ik iets interessants mee doen.</p>
+      <div class="processingcode">
+        import gab.opencv.*;<br />
+        import processing.video.*;<br />
+        <br />
+        OpenCV opencv;<br />
+        Capture video;<br />
+        <br />
+        void setup() {<br />
+          //PImage src = loadImage("robot_light.jpg");<br />
+          //src.resize(800, 0);<br />
+          <br />
+          //size(src.width, src.height);<br />
+          size(640, 480);<br />
+          video = new Capture(this, 640, 480);<br />
+          opencv = new OpenCV(this, 640, 480);<br />
+          <br />
+          //opencv = new OpenCV(this, src);<br />
+        <br />
+          video.start();<br />
+        <br />
+        }<br />
+        <br />
+        void draw() {<br />
+          opencv.loadImage(video);<br />
+        <br />
+          image(video, 0, 0 );<br />
+          <br />
+          //image(opencv.getOutput(), 0, 0); //draw openCV output, this is what opencv sees<br />
+          <br />
+          PVector loc = opencv.max();<br />
+          <br />
+          stroke(255, 0, 0);<br />
+          strokeWeight(4);<br />
+          noFill();<br />
+          ellipse(loc.x, loc.y, 10, 10);<br />
+        }<br />
+        <br />
+        void captureEvent(Capture c) {<br />
+          c.read();<br />
+        }<br />
+      </div>
+      <img src="images/CV3.png">
+
+      <h1>Assignment AR</h1>
+      <p>Deze opdracht is een opdracht voor augmented reality. Ook hier moest ik weer een bibliotheek downloaden. Hierna heb ik de 'marker' gedownload voor op mijn telefoon en uiteindelijk moest ik ervoor zorgen dat er een vierkant via de webcam op de marker kwam. Op de afbeelding is te zien dat dit niet optimaal gelukt is, dit kwam doordat de marker op mijn telefoon weergeven was en deze had veel weerspiegeling waardoor hij niet goed te lezen was.</p>
+      <div class="processingcode">
+        <p>
+           /**<br />
+           * NyARToolkit for proce55ing/3.0.5<br />
+           * (c)2008-2017 nyatla<br />
+           * airmail(at)ebony.plala.or.jp<br />
+           * <br />
+           * 最も短いARToolKitのコードです。<br />
+           * Hiroマーカの上に立方体を表示します。<br />
+           * 全ての設定ファイルとマーカファイルはスケッチディレクトリのlibraries/nyar4psg/dataにあります。<br />
+           * <br />
+           * This sketch is shortest sample.<br />
+           * The sketch shows cube on the marker of "patt.hiro".<br />
+           * Any pattern and configuration files are found in libraries/nyar4psg/data inside your sketchbook folder. <br />
+          */<br />
+          import processing.video.*;<br />
+          import jp.nyatla.nyar4psg.*;<br />
+          <br />
+          Capture cam;<br />
+          MultiMarker nya;<br />
+          <br />
+          void setup() {<br />
+            size(640,480,P3D);<br />
+            colorMode(RGB, 100);<br />
+            println(MultiMarker.VERSION);<br />
+            cam=new Capture(this,640,480);<br />
+            nya=new MultiMarker(this,width,height,"../../data/camera_para.dat",NyAR4PsgConfig.CONFIG_PSG);<br />
+            nya.addARMarker("../../data/patt.hiro",80);<br />
+            cam.start();<br />
+          }<br />
+          <br />
+          void draw()<br />
+          {<br />
+            if (cam.available() !=true) {<br />
+                return;<br />
+            }<br />
+            cam.read();<br />
+            nya.detect(cam);<br />
+            background(0);<br />
+            nya.drawBackground(cam);//frustumを考慮した背景描画<br />
+            if((!nya.isExist(0))){<br />
+              return;<br />
+            }<br />
+            nya.beginTransform(0);<br />
+            fill(0,0,255);<br />
+            translate(0,0,20);<br />
+            box(40);<br />
+            nya.endTransform();<br />
+          }<br />
+        </p>
+      </div>
+      <img src="images/AR.png">
+
+
+
+        <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+      </script>
+</body>
+
+</html>
